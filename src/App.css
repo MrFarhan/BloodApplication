@@ -1,0 +1,55 @@
+body {
+  background-image: url("./Images/blood-1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* width: 100%; */
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.box{
+  text-align: center;
+}
+
+
+
+
+.seekerMainDiv {
+  width: 300px;
+  padding: 5%;
+  display: block;
+  color: red;
+  font-weight: bold;
+}
+
+.divClass{
+  margin-top: 5%;
+}
