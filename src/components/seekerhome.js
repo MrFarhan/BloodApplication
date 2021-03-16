@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
 import { SelectField, MenuItem, FlatButton } from 'material-ui';
 import { Logout, seekerHomeData } from '../store/action/action';
 import Paper from 'material-ui/Paper';
@@ -31,14 +30,13 @@ class seekerHome extends Component {
     }
     componentWillReceiveProps = (props) => {
         if (props.seekerHomeData1) {
-            console.log(props.seekerHomeData1);
             this.setState({
                 alldataarray: props.seekerHomeData1
             })
         }
     }
     onValueChange = (a, b, value) => {
-        this.setState({value});
+        this.setState({ value });
         let filtered = [];
         if (value === 'All') {
             this.setState({ filtered: this.state.alldataarray, filter: false, value });
@@ -101,6 +99,7 @@ class seekerHome extends Component {
                     {
                         this.props.seekerHomeData1 && !this.state.filter ?
                             this.props.seekerHomeData1.map((value, index) => {
+                                // eslint-disable-next-line
                                 return <Paper style={{ "display": "block !important" }} key={index} style={style} zDepth={5}>
                                     <div className="seekerMainDiv">
                                         <li>{value.username}</li>
@@ -115,6 +114,7 @@ class seekerHome extends Component {
                     }
                     {
                         this.state.filtered ? this.state.filtered.map((value, index) => {
+                            // eslint-disable-next-line
                             return <Paper style={{ "display": "block !important" }} key={index} style={style} zDepth={5}>
                                 <div className="seekerMainDiv">
                                     <li>{value.username}</li>
@@ -133,7 +133,6 @@ class seekerHome extends Component {
 }
 
 function mapStateToProp(state) {
-    console.log(state.root.seekerHomeData)
     return ({
         seekerHomeData1: state.root.seekerHomeData,
         bloodgroup: state.root.bloodgroup

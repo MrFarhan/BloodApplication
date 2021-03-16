@@ -26,14 +26,12 @@ export default (state = INITIAL_STATE, action) => {
             })
 
         case ActionTypes.SEEKERHOMEDATA:
-            // console.log(action.payload)
             return ({
                 ...state,
                 seekerHomeData: action.payload
             })
 
         case ActionTypes.SIGNINERROR:
-            console.log(action.payload)
             return ({
                 ...state,
                 signinError: action.payload

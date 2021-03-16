@@ -44,7 +44,6 @@ class Signin extends Component {
         //     email: '',
         //     password: ''
         // })
-        console.log(user)
         this.props.signinWithEmailPassword(user);
     }
 
@@ -64,7 +63,6 @@ class Signin extends Component {
 
 
     render() {
-        console.log(this.props.signinError)
         return (
             <div>
 

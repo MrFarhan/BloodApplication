@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Logout, donorprofile, deletefunction } from '../store/action/action';
 import Paper from 'material-ui/Paper';
-import { SelectField, MenuItem, FlatButton } from 'material-ui';
 
 
 const style = {
@@ -24,7 +23,6 @@ class donorHome extends Component {
     }
 
     deletebutton1 = () => {
-        console.log("delete function")
         let uid = localStorage.getItem("uid")
         this.props.deletefunction(uid)
     }
@@ -35,7 +33,8 @@ class donorHome extends Component {
                 <h1>Welcome To Donor Home </h1>
                 {
                     this.props.donorprofiledata1 ?
-                        this.props.donorprofiledata1.map((value, index) => {
+                    this.props.donorprofiledata1.map((value, index) => {
+                            // eslint-disable-next-line
                             return <Paper key={index} style={{ "display": "block !important" }} key={index} style={style} zDepth={5}>
                                 <div class="seekerMainDiv" >
                                     <li>Age : {value.age}</li>

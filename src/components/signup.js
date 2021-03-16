@@ -71,18 +71,6 @@ class Signup extends Component {
             category: Category
 
         }
-        // this.setState({
-        //     userName: '',
-        //     email: '',
-        //     password: '',
-        //     confirmPassword: '',
-        //     number: '',
-        //     gender: '',
-        //     bloodGroup: '',
-        //     Category: ''
-
-        // })
-        console.log(user)
         if (userName && password && confirmPassword && gender && bloodGroup && number && Category) {
             if (password === confirmPassword) {
                 this.props.signupwithEmailPassword(user)

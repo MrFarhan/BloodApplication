@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { donorformdata } from '../store/action/action';
-import { Link } from 'react-router-dom'
 import "../App.css"
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+
 import TextField from 'material-ui/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import history from './../History'
 
 
@@ -30,10 +23,6 @@ const style1 = {
     margin: 12,
 };
 
-
-const floatingLabelStyle = {
-    textAlign: 'left'
-}
 
 
 class Signup extends Component {
@@ -56,14 +45,7 @@ class Signup extends Component {
             place: place,
             uid: localStorage.getItem("uid")
         }
-        // this.setState({
-        //     age: '',
-        //     weight: '',
-        //     place: '',
-        // })
-        console.log(data)
         if (age && weight && place) {
-            console.log(this.props.uid)
             this.props.donorformdata(data)
             history.push("/donorlist")
         }

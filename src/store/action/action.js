@@ -6,7 +6,6 @@ export function signupAction(user) {
     return dispatch => {
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
             .then((createdUser) => {
-                console.log('signed up successfully', createdUser.uid);
                 delete user.password;
                 delete user.confirmPassword;
                 user.uid = createdUser.uid;
@@ -31,12 +30,10 @@ export function signupAction(user) {
 
 export function signinAction(user) {
     return dispatch => {
-        console.log('user in signin', user);
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
             .then((signedinUser) => {
                 firebase.database().ref(`users/${signedinUser.uid}/`).once('value')
                     .then((userData) => {
-                        console.log(userData.val().bloodGroup)
                         let data = userData.val()
                         localStorage.setItem("uid", signedinUser.uid)
                         localStorage.setItem("bloodgroup", data.bloodGroup)
@@ -105,7 +102,6 @@ export function donorformdata(obj) {
 
 export function deletefunction(uid) {
     return dispatch => {
-        console.log("chal raha hai")
         firebase.database().ref(`users/${uid}/datafordonate`).remove()
             .then(() => {
                 history.push("/donorhome")
